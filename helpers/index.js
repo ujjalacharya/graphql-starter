@@ -1,3 +1,1 @@
-module.exports = {
-    dbConnection: require("./dbConnection"),
-}
+export { default as dbConnection } from "./dbConnection";

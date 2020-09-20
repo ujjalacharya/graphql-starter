@@ -23,7 +23,7 @@ const uniqueMessage = error => {
 /**
  * Get the erroror message from error object
  */
-exports.errorHandler = error => {
+export const errorHandler = error => {
   let message = "";
   if (error.code) {
     switch (error.code) {

@@ -1,19 +1,20 @@
-const express = require("express");
-const app = express();
-const { ApolloServer } = require("apollo-server-express");
-const path = require("path");
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import path from "path";
+import dotenv from "dotenv";
 
-require("dotenv").config();
+import { dbConnection } from "./helpers";
 
 const PORT = process.env.PORT || 4000;
-const { dbConnection } = require("./helpers");
+const app = express();
+dotenv.config();
 
 // Database Connection
 dbConnection();
 
-const { mergeTypeDefs, mergeResolvers } = require("@graphql-tools/merge");
+import { mergeTypeDefs, mergeResolvers } from "@graphql-tools/merge";
 
-const { loadFilesSync } = require("@graphql-tools/load-files");
+import { loadFilesSync } from "@graphql-tools/load-files";
 
 // typeDefs
 const typeDefs = mergeTypeDefs(

@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-module.exports = gql`
+export default gql`
     type Query {
         me: String!
     }
